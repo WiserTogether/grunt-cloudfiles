@@ -69,7 +69,7 @@ module.exports = function(grunt) {
         });
       });
     }).fail(function(err) {
-      grunt.log.error('Error with intiallization of Cloudfiles ::\n\t' + err);
+      grunt.log.error('Error with intiallization of Cloudfiles :: ' + cfAuth.auth.username + '\n\t' + err);
     });
 
 
