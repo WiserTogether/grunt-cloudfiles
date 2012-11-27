@@ -9,7 +9,21 @@ Cloudfiles is Rackspace's cloud object storage. It's simliar to Amazon S3 and is
 
 ## Configuration
 
-*TODO* - Talk about grunt.js setup
+You'll need something like the following in your grunt.js. The upload [] list contains the list of src -> container pairs, each of which can have "stripcomponents" specified, which will strip that many path components from the beginning of the path when calculating the destination path name. For instance, a file with a path of a/b/c/file.jpeg with stripcomponents=2 would be uploaded as c/file.jpeg.
+
+
+        cloudfiles: {
+            static: {
+                user: 'cloudfilesuser',
+                key: '1234longapikey42235',
+                upload: [
+                    {
+                        src: "static/admin/**/*",
+                        stripcomponents: 2,
+                        container: 'mywiserhealth-cdn'
+                    },
+                ]
+            }
 
 ## Changelog
 
